@@ -4,6 +4,8 @@ Repository for custom g-code for Bambu Studio. It also contains original g-code 
 
 Use at your own risk!
 
+See instructions here: https://www.reddit.com/r/BambuLab/comments/11gtlfp/change_filament_gcode_without_ams/
+
 # Copyright & License
 
 Copyright (c) 2023 eukadesigns
