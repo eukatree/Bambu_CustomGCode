@@ -52,7 +52,7 @@ G1 E-20 F500
 ; pause for user to load and press resume
 M400 U1
 
-; move away from chute and move back
+; move away from chute and move back, credits to @Billiam for this section
 G1 X65 Y240 F12000
 G1 Y265 F3000
 
