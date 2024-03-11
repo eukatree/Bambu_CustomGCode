@@ -5,7 +5,6 @@ M204 S9000
 {if toolchange_count > 1}
 G17
 G2 Z{max_layer_z + 0.4} I0.86 J0.86 P1 F10000 ; spiral lift a little from second lift
-{endif}
 G1 Z{max_layer_z + 3.0} F1200
 
 M400
@@ -183,6 +182,8 @@ M204 S[default_acceleration]
 {endif}
 {else}
 G1 X[x_after_toolchange] Y[y_after_toolchange] Z[z_after_toolchange] F12000
+{endif}
+
 {endif}
 
 ; as there is no AMS, these next three lines only serve to hide T[next_extruder]
