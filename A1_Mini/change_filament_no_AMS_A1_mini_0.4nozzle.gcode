@@ -1,5 +1,5 @@
-;===== machine: A1 =========================
-;===== date: 20231012 =======================
+;===== machine: A1 mini =========================
+;===== date: 20240518 =======================
 G392 S0
 M204 S9000
 {if toolchange_count > 1}
@@ -14,15 +14,15 @@ M106 P2 S0
 M104 S[old_filament_temp]
 {endif}
 
-G1 X267 F18000
-;{if toolchange_count == 2}
-; get travel path for change filament
-;M620.1 X[travel_point_1_x] Y[travel_point_1_y] F21000 P0
-;M620.1 X[travel_point_2_x] Y[travel_point_2_y] F21000 P1
-;M620.1 X[travel_point_3_x] Y[travel_point_3_y] F21000 P2
-;{endif}
+G1 X180 F18000
+M620.1 E F[old_filament_e_feedrate] T{nozzle_temperature_range_high[previous_extruder]}
+M620.10 A0 F[old_filament_e_feedrate]
+T[next_extruder]
+M620.1 E F[new_filament_e_feedrate] T{nozzle_temperature_range_high[next_extruder]}
+M620.10 A1 F[new_filament_e_feedrate] L[flush_length] H[nozzle_diameter] T[nozzle_temperature_range_high]
 
-G1 Y128 F9000
+
+G1 Y90 F9000
 
 ; pause for user to load and press resume
 M400 U1
@@ -63,12 +63,12 @@ M1002 set_filament_type:{filament_type[next_extruder]}
 M400
 M106 P1 S178
 M400 S3
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
-G1 X-48.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
 M400
 M106 P1 S0
 {endif}
@@ -96,12 +96,12 @@ G1 E[new_retract_length_toolchange] F300
 M400
 M106 P1 S178
 M400 S3
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
-G1 X-48.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
 M400
 M106 P1 S0
 {endif}
@@ -129,12 +129,12 @@ G1 E[new_retract_length_toolchange] F300
 M400
 M106 P1 S178
 M400 S3
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
-G1 X-48.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
 M400
 M106 P1 S0
 {endif}
@@ -158,20 +158,20 @@ G1 E{flush_length_4 * 0.02} F50
 M400
 M106 P1 S60
 M109 S[new_filament_temp]
-G1 E6 F{new_filament_e_feedrate} ;Compensate for filament spillage during waiting temperature
+G1 E5 F{new_filament_e_feedrate} ;Compensate for filament spillage during waiting temperature
 M400
 G92 E0
 G1 E-[new_retract_length_toolchange] F1800
 M400
 M106 P1 S178
 M400 S3
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
-G1 X-48.5 F3000
-G1 X-38.5 F18000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
+G1 X-13.5 F3000
+G1 X-3.5 F18000
 M400
 G1 Z{max_layer_z + 3.0} F3000
 M106 P1 S0
