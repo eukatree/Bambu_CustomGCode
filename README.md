@@ -11,18 +11,23 @@ Use at your own risk!
 # Installation Instructions
 
 Find the "Change filament G-code" section. To get here, click the edit button here:
-|![Edit Button Location](https://preview.redd.it/change-filament-g-code-without-ams-v0-rfihlq0jxgla1.png?width=507&format=png&auto=webp&s=1231c5613077f4d77bacf2cc5e725c57a27e11c0)
+![Edit Button Location](https://preview.redd.it/change-filament-g-code-without-ams-v0-rfihlq0jxgla1.png?width=507&format=png&auto=webp&s=1231c5613077f4d77bacf2cc5e725c57a27e11c0)
 
 Click the "Machine G-Code tab", and then scroll down to the section "Change filament G-code". The most common error is that the wrong section is used, so make sure you find the section labeled "Change filament G-code".
-|![Change Filament G-Code Location](https://preview.redd.it/change-filament-g-code-without-ams-v0-uk4z121qxgla1.png?width=744&format=png&auto=webp&s=43d8a159ba1e2c5aad9c308fe28a026fff891362)
+![Change Filament G-Code Location](https://preview.redd.it/change-filament-g-code-without-ams-v0-uk4z121qxgla1.png?width=744&format=png&auto=webp&s=43d8a159ba1e2c5aad9c308fe28a026fff891362)
 
 Replace the code in "Change filament G-code" with the code from this file:
-P1P/change_filament_noAMS_P1P_0.4nozzle_v1.9.5.gcode
-
-Replace the code in Bambu Studio for "Change filament G-code" with the code from: 
-This code would replace the code in Bambu Studio. Click to edit the preset circled below, and then replace all the code in the highlighted box under "Change filament G-code" 
+[change_filament_noAMS_P1P_0.4nozzle_v1.9.5.gcode](P1P/change_filament_noAMS_P1P_0.4nozzle_v1.9.5.gcode)
 
 See reddit thread here: https://www.reddit.com/r/BambuLab/comments/11gtlfp/change_filament_gcode_without_ams/
+
+# Usage Instructions
+
+Create multiple filament profiles in Bambu Studio. Using these multiple filament profiles, set the filaments desired on build plate. This includes setting the filament to change at layer heights, painting the part with different filaments, and setting different filaments for different objects. 
+
+Slice and print as normal.
+
+During the filament change, the filament will be unloaded. Once the filament is unloaded, remove the filament and insert the new filament. Because the gcode will use the flush volumes from the slicer, there is no need to do a purge when inserting the new filament, just make sure that the filament will be pulled in by the extruder gears. I can typically just push the edge firmly into the print head and press continue and this will pull in the filament for the purge once the print head is heated up. If this doesn't work, then I will heat up the print head and just extrude enough to feel the extruder gear catching the filament before resuming. 
 
 # Copyright & License
 
