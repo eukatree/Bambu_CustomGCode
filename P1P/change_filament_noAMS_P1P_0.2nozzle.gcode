@@ -1,3 +1,14 @@
+;===== machine: P1P ========================
+; Skip all flush lengths except flush_length_1
+; Speed up feedrate of flush_length_1 by 3
+;
+; Note the above changes speed up flushing, but may lead to cross contamination
+; Theoretically, the purge amounts required would be the same regardless of
+; nozzle size since the diameter of the tubing above the nozzle is the same,
+; but this times much longer with a 0.2 mm nozzle so you may be able to get
+; away with using this to speed up the flushing and color changes.
+
+
 ; change filament without AMS g-code
 {if toolchange_count > 1}
 M204 S9000 ; set starting acceleration
