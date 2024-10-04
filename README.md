@@ -16,8 +16,7 @@ Find the "Change filament G-code" section. To get here, click the edit button he
 Click the "Machine G-Code tab", and then scroll down to the section "Change filament G-code". The most common error is that the wrong section is used, so make sure you find the section labeled "Change filament G-code".
 ![Change Filament G-Code Location](https://preview.redd.it/change-filament-g-code-without-ams-v0-uk4z121qxgla1.png?width=744&format=png&auto=webp&s=43d8a159ba1e2c5aad9c308fe28a026fff891362)
 
-Replace the code in "Change filament G-code" with the code from this file:
-[change_filament_noAMS_P1P_0.4nozzle_v1.9.5.gcode](P1P/change_filament_noAMS_P1P_0.4nozzle_v1.9.5.gcode)
+Replace the code in "Change filament G-code" with the code from the file for your printer.
 
 See reddit thread here: https://www.reddit.com/r/BambuLab/comments/11gtlfp/change_filament_gcode_without_ams/
 
@@ -32,6 +31,12 @@ During the filament change, the filament will be unloaded. Once the filament is 
 # Copyright & License
 
 Copyright (c) 2023 eukadesigns
+
+Credits to:
+
+- Hillbilly-Phil and pakonambawan for the code for the A1 Mini
+- khristangrey for the code for the A1
+ 
 |![gplv3-only](https://www.gnu.org/graphics/gplv3-with-text-136x68.png) |![gplv3-or-later](https://www.gnu.org/graphics/gplv3-or-later.png)|
 |-|-|
 
