@@ -144,10 +144,7 @@ G1 E{flush_length_4 * 0.02} F50
 G1 E{flush_length_4 * 0.18} F{new_filament_e_feedrate}
 G1 E{flush_length_4 * 0.02} F50
 ; FLUSH_END
-G1 E-[new_retract_length_toolchange] F1800
-G1 E[new_retract_length_toolchange] F300
 {endif}
-
 ; FLUSH_START
 M400
 M109 S[new_filament_temp]
