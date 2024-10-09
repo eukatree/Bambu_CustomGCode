@@ -61,7 +61,6 @@ G92 E0
 ; always use highest temperature to flush
 M400
 M109 S[nozzle_temperature_range_high]
-
 {if flush_length_1 > 23.7}
 G1 E23.7 F{old_filament_e_feedrate} ; do not need pulsatile flushing for start part
 G1 E{(flush_length_1 - 23.7) * 0.02} F50
@@ -145,7 +144,10 @@ G1 E{flush_length_4 * 0.02} F50
 G1 E{flush_length_4 * 0.18} F{new_filament_e_feedrate}
 G1 E{flush_length_4 * 0.02} F50
 ; FLUSH_END
+G1 E-[new_retract_length_toolchange] F1800
+G1 E[new_retract_length_toolchange] F300
 {endif}
+
 ; FLUSH_START
 M400
 M109 S[new_filament_temp]
