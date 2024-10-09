@@ -187,7 +187,6 @@ M204 S[default_acceleration]
 G1 X[x_after_toolchange] Y[y_after_toolchange] Z[z_after_toolchange] F12000
 {endif}
 
-{endif}
 
 ; as there is no AMS, these next three lines only serve to hide T[next_extruder]
 ; if this was not included, the T[next_extruder] command is input after this
