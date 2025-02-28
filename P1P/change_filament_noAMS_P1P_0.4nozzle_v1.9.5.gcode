@@ -48,7 +48,9 @@ G1 E-20 F500
 M400 U1
 
 ; move away from chute and move back, credits to @Billiam for this section
-G1 X65 Y240 F12000
+G1 X120 F5000
+G1 Y240 F12000
+G1 X65
 G1 Y265 F3000
 
 ; don't know when next_extruder is >=255, so this may always activate?
