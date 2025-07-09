@@ -1,5 +1,5 @@
 ; change filament without AMS g-code
-{if toolchange_count > 1}
+{if toolchange_count >= 1}
 M204 S9000 ; set starting acceleration
 G17 ; set CNC workspace plane
 G2 Z{max_layer_z + 0.4} I0.86 J0.86 P1 F10000 ; spiral lift

@@ -1,6 +1,6 @@
 M620 S[next_extruder]A ; Everything between this and M621 is skipped if there is no AMS
 M204 S9000 ; Set starting acceleration
-{if toolchange_count > 1} ; toolchange_count increments each time there is a filament change
+{if toolchange_count >= 1} ; toolchange_count increments each time there is a filament change
 G17
 G2 Z{max_layer_z + 0.4} I0.86 J0.86 P1 F10000 ; spiral lift a little from second lift
 {endif}
